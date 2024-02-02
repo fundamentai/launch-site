@@ -1,0 +1,19 @@
+query GET_ALL_SOURCES {
+    sources {
+        data {
+            id
+            attributes {
+                title
+                content
+                publisher {
+                    data {
+                        attributes {
+                            name
+                            site
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

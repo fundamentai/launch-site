@@ -17,11 +17,7 @@ import { PRODUCTS, SPORT_PRODUCTS } from '@/data/data'
 import SectionGridFeatureItems from '@/components/SectionGridFeatureItems'
 import SectionMagazine5 from '@/app/blog/SectionMagazine5'
 
-import { test } from '@/api/controller/test'
-
 async function PageHome() {
-    await test()
-
     return (
         <div className="nc-PageHome relative overflow-hidden">
             <SectionHero2 />
