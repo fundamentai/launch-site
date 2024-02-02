@@ -1,5 +1,3 @@
-'use client'
-
 import Label from '@/components/Label/Label'
 import React, { FC } from 'react'
 import ButtonPrimary from '@/shared/Button/ButtonPrimary'
@@ -80,7 +78,7 @@ const AccountPage = () => {
                         {/* ---- */}
                         <div>
                             <Label>Gender</Label>
-                            <Select className="mt-1.5" onChange={console.log}>
+                            <Select className="mt-1.5">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>

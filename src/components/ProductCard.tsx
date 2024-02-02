@@ -192,7 +192,6 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0],
                     fontSize="text-xs"
                     sizeClass="py-2 px-4"
                     onClick={() => {
-                        console.log('sa')
                         router.push(`/fundamentai/inspect/${id}`)
                     }}
                 >

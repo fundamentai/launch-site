@@ -9,8 +9,6 @@ import { Skeleton } from 'antd'
 export default function page() {
     let { data, loading, error } = Query('GET_ALL_SOURCES')
 
-    console.log(data)
-
     if (!loading) {
         data = (data.sources.data as any[]).map((element: any) => {
             return {
@@ -21,8 +19,6 @@ export default function page() {
             }
         })
     }
-
-    console.log(data)
 
     return (
         <div className="w-full  flex flex-col items-center justify-start">
