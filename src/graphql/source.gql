@@ -13,6 +13,7 @@ query GET_SOURCE($id: ID!) {
                         }
                     }
                 }
+                source
             }
         }
     }

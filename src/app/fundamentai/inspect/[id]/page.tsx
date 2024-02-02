@@ -14,7 +14,8 @@ export default function page({ params }: { params: { id: string } }) {
     let source = !loading
         ? {
               title: data.source.data.attributes.title,
-              description: data.source.data.attributes.description
+              description: data.source.data.attributes.content,
+              link: data.source.data.attributes.source
           }
         : undefined
 
