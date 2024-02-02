@@ -22,7 +22,7 @@ const Logo: React.FC<LogoProps> = ({ img = logoImg, imgLight = logoLightImg, cla
             )}
             {imgLight && <Image className="hidden h-8 sm:h-10 w-auto dark:block" src={imgLight} alt="Logo-Light" sizes="200px" priority />}
         </Link>
-    )
+    ) 
 }
 
 export default Logo
