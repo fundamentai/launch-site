@@ -1,7 +1,7 @@
 import { Button, Form, Input, Tag } from 'antd'
 import React, { useEffect, useState } from 'react'
 
-export default function AddKeyWords() {
+export default function AddRelations() {
     const [data, setData] = useState<any[]>([
         { name: 'Tag 1', id: '1' },
         { name: 'Tag 2', id: '2' },
@@ -19,9 +19,9 @@ export default function AddKeyWords() {
         console.log(data)
     }, [data])
     return (
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between border-b-2 border-solid border-black/10">
             <div className="w-[40%]">
-                <h1 className="mb-2 ml-1 font-bold">Anahtar Kelimeler</h1>
+                <h1 className="mb-2 ml-1 font-bold">İlgili Kelimeler</h1>
                 {data.map((tag: any) => {
                     return (
                         <Tag

@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation'
 
 import { Query } from '@/graphql/controller'
 import AddKeyWords from '@/components/Fundamentai/AddKeyWords'
+import AddRelations from '@/components/Fundamentai/AddRelations'
 
 export default function page({ params }: { params: { id: string } }) {
     let { data, loading, error } = Query('GET_SOURCE', {
@@ -20,8 +21,6 @@ export default function page({ params }: { params: { id: string } }) {
           }
         : undefined
 
-    console.log(source)
-
     return (
         <div className="text-black flex flex-col items-center my-10">
             <div className="flex flex-col items-center max-w-[900px] w-[60vw] gap-y-8">
@@ -32,7 +31,10 @@ export default function page({ params }: { params: { id: string } }) {
                         http://localhost:3000/fundamentai/inspect/2 <ExportOutlined className="h-[14px]" />
                     </div>
                 </a>
-                <AddKeyWords />
+                <div className="my-4 flex flex-col gap-y-4 w-full">
+                    <AddRelations />
+                    <AddKeyWords />
+                </div>
             </div>
         </div>
     )
