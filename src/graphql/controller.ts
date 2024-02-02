@@ -16,7 +16,13 @@ function resolve(path: string, obj: any) {
 }
 
 export function Query(query: string) {
-    return useQuery(resolve(query, queries))
+    let { data, loading, error } = useQuery(resolve(query, queries))
+
+    return {
+        data,
+        error,
+        loading
+    }
 }
 
 export function Mutation(mutate: any) {}
