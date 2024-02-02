@@ -182,6 +182,8 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0],
 
     const renderGroupButtons = () => {
         return (
+            // Hover sepete ekle
+
             <div className="absolute bottom-0 group-hover:bottom-4 inset-x-1 flex justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 <ButtonPrimary className="shadow-lg" fontSize="text-xs" sizeClass="py-2 px-4" onClick={() => notifyAddTocart({ size: 'XL' })}>
                     <BagIcon className="w-3.5 h-3.5 mb-0.5" />
@@ -196,6 +198,7 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0],
                     <ArrowsPointingOutIcon className="w-3.5 h-3.5" />
                     <span className="ms-1">Quick view</span>
                 </ButtonSecondary>
+                {/* <label className="text-transparent">as</label> */}
             </div>
         )
     }
@@ -206,6 +209,7 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0],
         }
 
         return (
+            // Hover beden ekle
             <div className="absolute bottom-0 inset-x-1 space-x-1.5 rtl:space-x-reverse flex justify-center opacity-0 invisible group-hover:bottom-4 group-hover:opacity-100 group-hover:visible transition-all">
                 {sizes.map((size, index) => {
                     return (
@@ -218,17 +222,18 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0],
                         </div>
                     )
                 })}
+                <label className="text-transparent">as</label>
             </div>
         )
     }
 
     return (
         <>
-            <div className={`nc-ProductCard relative flex flex-col bg-transparent ${className}`}>
-                <Link href={'/product-detail'} className="absolute inset-0"></Link>
+            <div className={`nc-ProductCard relative flex flex-col bg-transparent  ${className}`}>
+                {/* <Link href={'/product-detail'} className="absolute inset-0"></Link> */}
 
-                <div className="relative flex-shrink-0 bg-slate-50 dark:bg-slate-300 rounded-3xl overflow-hidden z-1 group">
-                    <Link href={'/product-detail'} className="block">
+                <div className="relative flex-shrink-0  rounded-3xl overflow-hidden z-1 group">
+                    {/* <Link href={'/product-detail'} className="block">
                         <NcImage
                             containerClassName="flex aspect-w-11 aspect-h-12 w-full h-0"
                             src={image}
@@ -237,29 +242,51 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0],
                             sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 40vw"
                             alt="product"
                         />
-                    </Link>
-                    <ProductStatus status={status} />
-                    <LikeButton liked={isLiked} className="absolute top-3 end-3 z-10" />
-                    {sizes ? renderSizeList() : renderGroupButtons()}
+                    </Link> */}
+                    {/* <ProductStatus status={status} /> */}
+                    <div className="space-y-4 px-5 pt-5 pb-5">
+                        {/* {renderVariants()} */}
+                        <div>
+                            <h2 className="nc-ProductCard__title text-base font-semibold transition-colors line-clamp-2">{name}</h2>
+                            <p className={`text-sm text-slate-500 dark:text-slate-400 mt-1 line-clamp-4 `}>{description}</p>
+                        </div>
+
+                        <div className="flex justify-between items-end ">
+                            {/* <Prices price={price} /> */}
+                            <div className="flex items-center mb-0.5">
+                                <StarIcon className="w-5 h-5 pb-[1px] text-amber-400" />
+                                <span className="text-sm ms-1 text-slate-500 dark:text-slate-400">
+                                    {rating || ''} ({numberOfReviews || 0} reviews)
+                                </span>
+                            </div>
+                        </div>
+                        {
+                            // sizes ? renderSizeList() :
+                            renderGroupButtons()
+                        }
+                    </div>
+                    {/* <LikeButton liked={isLiked} className="absolute top-3 end-3 z-10" /> */}
+                    {/* {sizes ? renderSizeList() : renderGroupButtons()} */}
                 </div>
 
-                <div className="space-y-4 px-2.5 pt-5 pb-2.5">
+                {/* <div className="space-y-4 px-2.5 pt-5 pb-2.5">
                     {renderVariants()}
                     <div>
-                        <h2 className="nc-ProductCard__title text-base font-semibold transition-colors">{name}</h2>
-                        <p className={`text-sm text-slate-500 dark:text-slate-400 mt-1 `}>{description}</p>
+                        <h2 className="nc-ProductCard__title text-base font-semibold transition-colors line-clamp-2">{name}</h2>
+                        <p className={`text-sm text-slate-500 dark:text-slate-400 mt-1 line-clamp-4 `}>{description}</p>
                     </div>
 
-                    <div className="flex justify-between items-end ">
-                        <Prices price={price} />
-                        <div className="flex items-center mb-0.5">
+                    <div className="flex justify-between items-end "> */}
+                {/* <Prices price={price} /> */}
+                {/* <div className="flex items-center mb-0.5">
                             <StarIcon className="w-5 h-5 pb-[1px] text-amber-400" />
                             <span className="text-sm ms-1 text-slate-500 dark:text-slate-400">
                                 {rating || ''} ({numberOfReviews || 0} reviews)
                             </span>
                         </div>
                     </div>
-                </div>
+                    {sizes ? renderSizeList() : renderGroupButtons()}
+                </div> */}
             </div>
 
             {/* QUICKVIEW */}

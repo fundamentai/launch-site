@@ -10,7 +10,8 @@ import DropdownCategories from './DropdownCategories'
 import CartDropdown from './CartDropdown'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
-
+import fundamentai from '@/images/FundamentAI.svg'
+import Image from 'next/image'
 export interface MainNav2Props {
     className?: string
 }
@@ -21,16 +22,20 @@ const MainNav2: FC<MainNav2Props> = ({ className = '' }) => {
 
     const renderMagnifyingGlassIcon = () => {
         return (
-            <svg width={22} height={22} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-                <path d="M22 22L20 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            <div className="flex items-center">
+                <label className="font-bold">FundamentAI</label>
+                {/* <Image src={fundamentai} alt="fundamentai logo" /> */}
+            </div>
+            // <svg width={22} height={22} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            //     <path
+            //         d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+            //         stroke="currentColor"
+            //         strokeWidth="1.5"
+            //         strokeLinecap="round"
+            //         strokeLinejoin="round"
+            //     />
+            //     <path d="M22 22L20 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            // </svg>
         )
     }
 

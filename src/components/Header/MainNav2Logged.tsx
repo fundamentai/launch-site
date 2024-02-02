@@ -8,7 +8,8 @@ import Navigation from '@/shared/Navigation/Navigation'
 import CartDropdown from './CartDropdown'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
-
+import logo from '@/images/FundamentAI.svg'
+import Image from 'next/image'
 export interface MainNav2LoggedProps {}
 
 const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
@@ -82,7 +83,7 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
                         </button>
                     )}
                     <AvatarDropdown />
-                    <CartDropdown />
+                    {/* <CartDropdown /> */}
                 </div>
             </div>
         )

@@ -111,7 +111,7 @@ const DEMO_VARIANT_COLORS: ProductVariant[] = [
 export const PRODUCTS: Product[] = [
     {
         id: 1,
-        name: 'Rey Nylon Backpack',
+        name: 'Haber Haber Haber Haber ',
         description: 'Brown cockroach wings',
         price: 74,
         image: productImgs[16],
@@ -128,8 +128,8 @@ export const PRODUCTS: Product[] = [
     },
     {
         id: 2,
-        name: 'Round Buckle 1" Belt',
-        description: 'Classic green',
+        name: 'Haber Haber Haber Haber ',
+        description: 'Haber Haber Haber Haber ',
         price: 68,
         image: productImgs[1],
         category: 'Category 1',
@@ -143,7 +143,7 @@ export const PRODUCTS: Product[] = [
     },
     {
         id: 3,
-        name: 'Waffle Knit Beanie',
+        name: 'Haber Haber Haber Haber ',
         description: 'New blue aqua',
         price: 132,
         image: productImgs[15],
