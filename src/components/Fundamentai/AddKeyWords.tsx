@@ -21,7 +21,7 @@ export default function AddKeyWords() {
     return (
         <div className="w-full flex justify-between">
             <div className="w-[40%]">
-                <h1 className="mb-2 ml-1 font-bold">Anahtar Kelimeler</h1>
+                <h1 className="mb-2 ml-1 font-bold">Haberin Anahtar Kelimeleri</h1>
                 {data.map((tag: any) => {
                     return (
                         <Tag

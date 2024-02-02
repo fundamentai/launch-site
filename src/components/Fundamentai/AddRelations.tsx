@@ -21,7 +21,7 @@ export default function AddRelations() {
     return (
         <div className="w-full flex justify-between border-b-2 border-solid border-black/10">
             <div className="w-[40%]">
-                <h1 className="mb-2 ml-1 font-bold">İlgili Kelimeler</h1>
+                <h1 className="mb-2 ml-1 font-bold">Haberin İlişkileri</h1>
                 {data.map((tag: any) => {
                     return (
                         <Tag
@@ -49,7 +49,7 @@ export default function AddRelations() {
                     // onFinishFailed={onFinishFailed}
                     layout="vertical"
                 >
-                    <Form.Item label="İlgili kelime giriniz" name="name">
+                    <Form.Item label="İlgili ilişki giriniz" name="name">
                         <Input className="rounded-xl" />
                     </Form.Item>
 
