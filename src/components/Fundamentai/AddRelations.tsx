@@ -49,7 +49,7 @@ export default function AddRelations() {
                     // onFinishFailed={onFinishFailed}
                     layout="vertical"
                 >
-                    <Form.Item label="Anahtar kelime giriniz" name="name">
+                    <Form.Item label="İlgili kelime giriniz" name="name">
                         <Input className="rounded-xl" />
                     </Form.Item>
 
