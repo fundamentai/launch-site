@@ -7,6 +7,8 @@ import Footer from '@/shared/Footer/Footer'
 import SiteHeader from '@/app/SiteHeader'
 import CommonClient from './CommonClient'
 
+import { ApolloWrapper } from '@/graphql/apollo-wrapper'
+
 const poppins = Poppins({
     subsets: ['latin'],
     display: 'swap',
@@ -17,10 +19,12 @@ export default function RootLayout({ children, params }: { children: React.React
     return (
         <html lang="en" dir="" className={poppins.className}>
             <body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
-                <SiteHeader />
-                {children}
-                <CommonClient />
-                <Footer />
+                <ApolloWrapper>
+                    <SiteHeader />
+                    {children}
+                    <CommonClient />
+                    <Footer />
+                </ApolloWrapper>
             </body>
         </html>
     )
