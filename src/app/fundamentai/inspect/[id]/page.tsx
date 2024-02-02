@@ -53,13 +53,16 @@ export default function page({ params }: { params: { id: string } }) {
                     <AddKeyWords />
                 </div>
                 <div className="flex   items-center justify-center rounded-lg my-10">
-                    <Button
-                        size="large"
-                        className="flex items-center text-white font-bold bg-gradient-to-r from-[#7C7DCF]  to-[#4592DB] justify-center gap-4"
-                    >
-                        Yazı yaz
-                        <Image className="w-4 h-4" alt="" src={bardWhite} />
-                    </Button>
+                    <Link href={`/fundamentai/inspect/${params.id}/editor`}>
+                        <Button
+                            onClick={() => redirect(`/fundamentai/inspect/${params.id}/editor`)}
+                            size="large"
+                            className="flex items-center scale-125 text-white font-bold bg-gradient-to-r from-[#7C7DCF]  to-[#4592DB] justify-center gap-4"
+                        >
+                            Yazı yaz
+                            <Image className="w-4 h-4" alt="" src={bardWhite} />
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </div>
