@@ -22,7 +22,6 @@ export function Query(query: string, variables: any = {}) {
         variables
     })
 
-    console.log(variables)
 
     return {
         data,

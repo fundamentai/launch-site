@@ -33,11 +33,7 @@ const SocialsList1: FC<SocialsList1Props> = ({ className = 'space-y-3' }) => {
         )
     }
 
-    return (
-        <div className={`nc-SocialsList1 ${className}`} data-nc-id="SocialsList1">
-            {socials.map(renderItem)}
-        </div>
-    )
+    return <div className={` flex items-center ${className}`}>{socials.map(renderItem)}</div>
 }
 
 export default SocialsList1
