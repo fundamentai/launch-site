@@ -15,9 +15,7 @@ export default function AddRelations() {
         setData(data.filter((tag: any) => tag.id !== id))
     }
 
-    useEffect(() => {
-        console.log(data)
-    }, [data])
+    useEffect(() => {}, [data])
     return (
         <div className="w-full flex justify-between border-b-2 border-solid border-black/10">
             <div className="w-[40%]">
@@ -29,7 +27,6 @@ export default function AddRelations() {
                             className="m-1"
                             closeIcon
                             onClose={() => {
-                                console.log(tag.id)
                                 deleteTag(tag.id)
                             }}
                         >
@@ -42,8 +39,6 @@ export default function AddRelations() {
                 <Form
                     // name="basic"
                     onFinish={(e: any) => {
-                        // let _data = data.push({ name: e.name, id: `${data.length + 10}` }) as any
-                        console.log(data)
                         setData((prevData: any[]) => [...prevData, { name: e.name, id: `${prevData.length + 10}` }])
                     }}
                     // onFinishFailed={onFinishFailed}
