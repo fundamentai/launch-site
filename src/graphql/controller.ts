@@ -11,6 +11,12 @@ let queries = {
     GET_SOURCE
 }
 
+import ADD_SUMMARY from '@/graphql/source.gql'
+import { useMutation } from '@apollo/client'
+let mutations = {
+    ADD_SUMMARY
+}
+
 function resolve(path: string, obj: any) {
     return path.split('.').reduce(function (prev, curr) {
         return prev ? prev[curr] : null
@@ -31,4 +37,14 @@ export function Query(query: string, variables: any = {}) {
     }
 }
 
-export function Mutation(mutate: any) {}
+export function Mutation(mutate: any, variables: any = {}) {
+    let [mutation, { data }] = useMutation(resolve(mutate, mutations), {
+        variables
+    })
+
+    console.log(variables)
+
+    return {
+        data
+    }
+}
