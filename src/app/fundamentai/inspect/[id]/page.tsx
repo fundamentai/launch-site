@@ -21,9 +21,13 @@ export default function page({ params }: { params: { id: string } }) {
           }
         : undefined
 
+    console.log(source)
+
     return (
         <div className="text-black flex flex-col items-center my-10">
             <div className="flex flex-col items-center max-w-[900px] w-[60vw] gap-y-8">
+                <h1 className="text-center text-[25px] font-bold leading-relaxed">{source?.title.toUpperCase()}</h1>
+                <label>{source?.description}</label>
                 <h1 className="text-center text-[25px] font-bold leading-relaxed">{source?.title.toUpperCase()}</h1>
                 <label>{source?.description}</label>
                 <a href="http://localhost:3000/fundamentai/inspect/2" target="_blank">
