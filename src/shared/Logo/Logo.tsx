@@ -16,7 +16,7 @@ const Logo: React.FC<LogoProps> = ({ img = logoImg, imgLight = logoLightImg, cla
             {/* THIS USE FOR MY CLIENT */}
             {/* PLEASE UN COMMENT BELLOW CODE AND USE IT */}
             {img ? (
-                <Image className={`block h-8 sm:h-10 w-auto ${imgLight ? 'dark:hidden' : ''}`} src={img} alt="Logo" sizes="200px" priority />
+                <Image className={`block h-8 sm:h-14 w-auto ${imgLight ? 'dark:hidden' : ''}`} src={img} alt="Logo" sizes="200px" priority />
             ) : (
                 'Logo Here'
             )}

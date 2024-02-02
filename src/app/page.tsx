@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SectionHowItWork from '@/components/SectionHowItWork/SectionHowItWork'
 import BackgroundSection from '@/components/BackgroundSection/BackgroundSection'
 import SectionPromo1 from '@/components/SectionPromo1'
@@ -16,8 +16,10 @@ import ButtonSecondary from '@/shared/Button/ButtonSecondary'
 import { PRODUCTS, SPORT_PRODUCTS } from '@/data/data'
 import SectionGridFeatureItems from '@/components/SectionGridFeatureItems'
 import SectionMagazine5 from '@/app/blog/SectionMagazine5'
+import { redirect } from 'next/navigation'
 
 async function PageHome() {
+    redirect('/fundamentai')
     return (
         <div className="nc-PageHome relative overflow-hidden">
             <SectionHero2 />

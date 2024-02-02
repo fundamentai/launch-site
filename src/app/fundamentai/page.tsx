@@ -4,6 +4,7 @@ import ProductCard from '@/components/ProductCard'
 import React from 'react'
 
 import { Query } from '@/graphql/controller'
+import { Skeleton } from 'antd'
 
 export default function page() {
     let { data, loading, error } = Query('GET_ALL_SOURCES')
