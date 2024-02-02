@@ -1,0 +1,9 @@
+mutation ADD_SUMMARY($id: ID!, $summary: JSON!) {
+    updateSource(id: $id, data: { summary: $summary }) {
+        data {
+            attributes {
+                summary
+            }
+        }
+    }
+}
