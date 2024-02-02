@@ -1,35 +1,35 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    typedRoutes: true,
-  },
+    experimental: {
+        typedRoutes: true
+    },
 
-  webpack: (config, options) => {
-    config.module.rules.push({
-      test: /\.(graphql|gql)/,
-      exclude: /node_modules/,
-      loader: "graphql-tag/loader",
-    });
+    webpack: (config, options) => {
+        config.module.rules.push({
+            test: /\.(graphql|gql)/,
+            exclude: /node_modules/,
+            loader: 'graphql-tag/loader'
+        })
 
-    return config;
-  },
+        return config
+    },
 
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
-        pathname: "/**",
-      },
-    ],
-  },
-};
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.pexels.com',
+                port: '',
+                pathname: '/**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                port: '',
+                pathname: '/**'
+            }
+        ]
+    }
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const PostCardMetaV2 = () => {
-  return <div>PostCardMetaV2</div>;
-};
+    return <div>PostCardMetaV2</div>
+}
 
-export default PostCardMetaV2;
+export default PostCardMetaV2

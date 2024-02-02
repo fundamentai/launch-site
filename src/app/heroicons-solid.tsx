@@ -1,5 +1,5 @@
-"use client";
+'use client'
 
-import HeroiconsSolid from "@heroicons/react/24/solid";
+import HeroiconsSolid from '@heroicons/react/24/solid'
 
-export default HeroiconsSolid;
+export default HeroiconsSolid

@@ -1,3 +1,3 @@
 export default {
-  gql: "http://localhost/wordpress/graphql",
-};
+    gql: 'http://localhost/wordpress/graphql'
+}

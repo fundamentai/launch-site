@@ -1,14 +1,14 @@
-"use client";
+'use client'
 
-import React from "react";
-import { Toaster } from "react-hot-toast";
+import React from 'react'
+import { Toaster } from 'react-hot-toast'
 
 const CommonClient = () => {
-  return (
-    <>
-      <Toaster />
-    </>
-  );
-};
+    return (
+        <>
+            <Toaster />
+        </>
+    )
+}
 
-export default CommonClient;
+export default CommonClient
