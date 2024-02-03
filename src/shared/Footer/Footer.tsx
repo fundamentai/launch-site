@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
     }
 
     return (
-        <div className="nc-Footer relative py-10 lg:pt-214 lg:pb-12 border-t border-neutral-200 dark:border-neutral-700">
+        <div className="nc-Footer relative py-8 lg:py-12 border-t-2 border-neutral-200 dark:border-neutral-700">
             <div className="container flex items-center justify-between w-[100vw] ">
                 <Logo />
                 {/* <div className="grid grid-cols-2 gap-5 col-span-2 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col">

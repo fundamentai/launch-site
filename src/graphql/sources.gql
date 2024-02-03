@@ -5,6 +5,8 @@ query GET_ALL_SOURCES {
             attributes {
                 title
                 content
+                createdAt
+
                 publisher {
                     data {
                         attributes {
