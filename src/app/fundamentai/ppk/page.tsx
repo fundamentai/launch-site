@@ -20,43 +20,12 @@ export default function page() {
         <div className="w-full min-h-[70vh] flex flex-col items-center  py-10">
             {contextHolder}
 
-            <div className="w-[85vw] ">
-                <h1 className="w-full text-center font-bold text-[24px] mb-4">PPK KARŞILAŞTIRMASI</h1>
+            <div className="w-[88vw] ">
+                <h1 className="w-full text-center font-bold text-[24px] mb-4">PARA POLİTİKASI KURULU KARŞILAŞTIRMASI</h1>
                 <div className="flex items-center justify-between pt-8">
-                    <div>
+                    <div className="border-2 border-solid border-green-500 p-4 rounded-xl">
                         <h1 className="text-black/70 relative font-bold text-[20px] mb-2 w-full text-center border-solid border-b-2 border-neutral-200 pb-4">
-                            Eski{' '}
-                            <Button
-                                className="absolute right-1 "
-                                onClick={() => {
-                                    navigator.clipboard.writeText(oldText)
-                                    messageApi.open({ type: 'success', content: 'Başarıyla kopyalandı.' })
-                                }}
-                                icon={<CopyOutlined />}
-                            />
-                        </h1>
-                        <p className="text-justify w-[40vw]">
-                            {_diff.map((dif: any, index: number) => {
-                                if (dif[0] === 0 || dif[0] === -1) {
-                                    return (
-                                        <>
-                                            <span
-                                                key={index}
-                                                className={`${
-                                                    dif[0] === -1 ? 'text-red-600 font-bold' : dif[0] === 0 ? 'text-black' : 'text-green-600'
-                                                }`}
-                                            >
-                                                {dif[1]}
-                                            </span>
-                                        </>
-                                    )
-                                }
-                            })}
-                        </p>
-                    </div>
-                    <div>
-                        <h1 className="text-black/70 relative font-bold text-[20px] mb-2 w-full text-center border-solid border-b-2 border-neutral-200 pb-4">
-                            Yeni{' '}
+                            Yeni
                             <Button
                                 className="absolute right-1 "
                                 onClick={() => {
@@ -79,6 +48,37 @@ export default function page() {
                                                         : dif[0] === 0
                                                         ? 'text-black'
                                                         : 'text-green-600 font-bold'
+                                                }`}
+                                            >
+                                                {dif[1]}
+                                            </span>
+                                        </>
+                                    )
+                                }
+                            })}
+                        </p>
+                    </div>
+                    <div className="border-2 border-dashed border-red-500 p-4 rounded-xl">
+                        <h1 className="text-black/70 relative font-bold text-[20px] mb-2 w-full text-center border-solid border-b-2 border-neutral-200 pb-4">
+                            Eski{' '}
+                            <Button
+                                className="absolute left-1 "
+                                onClick={() => {
+                                    navigator.clipboard.writeText(oldText)
+                                    messageApi.open({ type: 'success', content: 'Başarıyla kopyalandı.' })
+                                }}
+                                icon={<CopyOutlined />}
+                            />
+                        </h1>
+                        <p className="text-justify w-[40vw]">
+                            {_diff.map((dif: any, index: number) => {
+                                if (dif[0] === 0 || dif[0] === -1) {
+                                    return (
+                                        <>
+                                            <span
+                                                key={index}
+                                                className={`${
+                                                    dif[0] === -1 ? 'text-red-600 font-bold' : dif[0] === 0 ? 'text-black' : 'text-green-600'
                                                 }`}
                                             >
                                                 {dif[1]}
