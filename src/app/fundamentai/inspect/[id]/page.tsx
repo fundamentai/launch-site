@@ -56,7 +56,7 @@ export default function page({ params }: { params: { id: string } }) {
                             size="large"
                             className="flex items-center scale-125 text-white font-bold bg-gradient-to-r from-[#7C7DCF]  to-[#4592DB] justify-center gap-4"
                         >
-                            Yazı yaz
+                            Fikir ver
                             <Image className="w-4 h-4" alt="" src={bardWhite} />
                         </Button>
                     </Link>

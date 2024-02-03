@@ -10,6 +10,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 import logo from '@/images/FundamentAI.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 export interface MainNav2LoggedProps {}
 
 const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
@@ -73,17 +74,24 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
 
                 <div className="flex-[2] hidden lg:flex justify-center mx-4">{showSearchForm ? renderSearchForm() : <Navigation />}</div>
 
-                <div className="flex-1 flex items-center justify-end text-slate-700 dark:text-slate-100">
-                    {!showSearchForm && (
+                <div className="flex-1 flex gap-x-6 items-center justify-end text-slate-700 dark:text-slate-100">
+                    {/* {!showSearchForm && (
                         <button
                             className="hidden lg:flex w-10 h-10 sm:w-12 sm:h-12 rounded-full text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none items-center justify-center"
                             onClick={() => setShowSearchForm(!showSearchForm)}
                         >
                             {renderMagnifyingGlassIcon()}
                         </button>
-                    )}
-                    <AvatarDropdown />
+                    )} */}
+                    {/* <AvatarDropdown /> */}
                     {/* <CartDropdown /> */}
+                    <Link href={'/fundamentai'}>Ana Sayfa</Link>
+                    <Link href={'/fundamentai/currency'} className="">
+                        Döviz
+                    </Link>
+                    <Link href={'/fundamentai/ppk'} className="">
+                        PPK
+                    </Link>
                 </div>
             </div>
         )
