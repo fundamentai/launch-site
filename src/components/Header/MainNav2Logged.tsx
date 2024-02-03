@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation'
 import logo from '@/images/FundamentAI.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ConfigProvider, Menu } from 'antd'
 export interface MainNav2LoggedProps {}
 
 const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
@@ -62,6 +63,24 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
     }
 
     const renderContent = () => {
+        const items: any['items'] = [
+            {
+                label: 'Hızlı İşlemler',
+                key: 'SubMenu',
+                // icon: <SettingOutlined />,
+                children: [
+                    {
+                        type: 'group',
+                        label: 'PPK Karşılaştırması'
+                    },
+                    {
+                        type: 'group',
+                        label: 'Günlük Kur'
+                    }
+                ]
+            }
+        ]
+
         return (
             <div className="h-20 flex justify-between">
                 <div className="flex items-center lg:hidden flex-1">
@@ -83,15 +102,10 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
                             {renderMagnifyingGlassIcon()}
                         </button>
                     )} */}
-                    {/* <AvatarDropdown /> */}
-                    {/* <CartDropdown /> */}
-                    <Link href={'/fundamentai'}>Ana Sayfa</Link>
-                    <Link href={'/fundamentai/currency'} className="">
-                        Döviz
+                    <Link className="hover:bg-slate-100 px-4 h-12 flex items-center justify-center rounded-full" href={'/fundamentai'}>
+                        Ana Sayfa
                     </Link>
-                    <Link href={'/fundamentai/ppk'} className="">
-                        PPK
-                    </Link>
+                    <AvatarDropdown />
                 </div>
             </div>
         )

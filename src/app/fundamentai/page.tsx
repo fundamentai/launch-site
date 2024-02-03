@@ -102,7 +102,7 @@ export default function page() {
                                 <div className="flex flex-col items-center w-full px-4 gap-y-4">
                                     <div className="flex justify-center gap-x-2 w-full">
                                         <Input placeholder="Haber ara" className="rounded-lg border-[#d9d9d9] w-full" />
-                                        <Button size="large" className="h-full w-full " icon={<SearchOutlined />} />
+                                        <Button size="large" className="h-full w-full " icon={<SearchOutlined className="text-blue-700" />} />
                                     </div>
                                     <DatePicker placeholder="Tarihe göre ara" size="large" className="w-full" />
                                 </div>
