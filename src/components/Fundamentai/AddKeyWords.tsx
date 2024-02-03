@@ -32,11 +32,9 @@ export default function AddKeyWords({ keywords }: { keywords: string[] }) {
             </div>
             <div className="w-[30%]">
                 <Form
-                    // name="basic"
                     onFinish={(e: any) => {
                         setData((prevData: any[]) => [...prevData, e.name])
                     }}
-                    // onFinishFailed={onFinishFailed}
                     layout="vertical"
                 >
                     <Form.Item label="Anahtar kelime giriniz" name="name">

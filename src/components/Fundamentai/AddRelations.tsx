@@ -1,7 +1,7 @@
 'use client'
 
 import { Button, Form, Input, Tag } from 'antd'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function AddRelations({ relations }: { relations: string[] }) {
     const [data_, setData] = useState<any[]>(relations)
@@ -10,7 +10,6 @@ export default function AddRelations({ relations }: { relations: string[] }) {
         setData(data_.filter((tag: any) => tag.id !== id))
     }
 
-    useEffect(() => {}, [data_])
     return (
         <div className="w-full flex justify-between border-b-2 border-solid border-black/10">
             <div className="w-[60%]">
@@ -32,11 +31,9 @@ export default function AddRelations({ relations }: { relations: string[] }) {
             </div>
             <div className="w-[30%]">
                 <Form
-                    // name="basic"
                     onFinish={(e: any) => {
                         setData((prevData: any[]) => [...prevData, e.name])
                     }}
-                    // onFinishFailed={onFinishFailed}
                     layout="vertical"
                 >
                     <Form.Item label="İlgili ilişki giriniz" name="name">
