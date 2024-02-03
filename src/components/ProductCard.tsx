@@ -230,7 +230,9 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0] 
     return (
         <>
             <Link href={`/fundamentai/inspect/${id}`}>
-                <div className={`nc-ProductCard relative flex flex-col bg-transparent h-full cursor-pointer ${className}`}>
+                <div
+                    className={`nc-ProductCard relative flex duration-200 hover:scale-[1.01] flex-col bg-transparent h-full cursor-pointer ${className}`}
+                >
                     {/* İmage */}
                     <div className="relative flex-shrink-0 bg-slate-50 dark:bg-slate-300 rounded-t-lg overflow-hidden z-1 group">
                         <NcImage
