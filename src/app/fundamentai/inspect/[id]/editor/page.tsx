@@ -62,6 +62,16 @@ export default function page({ params }: { params: { id: string } }) {
                                 </div>
                             </div>
                         )}
+                        {/* Yeniden yazdır */}
+                        <div className="w-full p-4">
+                            <Button
+                                size="large"
+                                className="flex items-center w-full text-white font-bold bg-gradient-to-r from-[#7C7DCF]  to-[#4592DB] justify-center gap-4"
+                            >
+                                Fikir ver
+                                <Image className="w-4 h-4" alt="" src={bardWhite} />
+                            </Button>
+                        </div>
                         {/* Anahtar kelimeler */}
                         {!loading && source?.summary.keywords && (
                             <div className="w-full px-4 py-4 border-b-2 border-dashed border-neutral-200">
@@ -88,17 +98,6 @@ export default function page({ params }: { params: { id: string } }) {
                                 })}
                             </div>
                         )}
-
-                        {/* Yeniden yazdır */}
-                        <div className="w-full p-4">
-                            <Button
-                                size="large"
-                                className="flex items-center w-full text-white font-bold bg-gradient-to-r from-[#7C7DCF]  to-[#4592DB] justify-center gap-4"
-                            >
-                                Yeniden yazdır
-                                <Image className="w-4 h-4" alt="" src={bardWhite} />
-                            </Button>
-                        </div>
                     </div>
                 </Sider>
             </Layout>
