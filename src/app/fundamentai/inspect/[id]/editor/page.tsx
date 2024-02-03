@@ -44,7 +44,7 @@ export default function page({ params }: { params: { id: string } }) {
                 </Layout>
 
                 <Sider
-                    width={'30vw'}
+                    width={'40vw'}
                     className="border-solid border-l-2 overflow-x-hidden overflow-y-auto border-neutral-200 py-4 px-2"
                     trigger={null}
                     collapsible
@@ -78,8 +78,8 @@ export default function page({ params }: { params: { id: string } }) {
                                 <h1 className="font-bold mb-1 ml-2">Anahtar Kelimeler</h1>
                                 {source?.summary.keywords.map((_tag: any, index: number) => {
                                     return (
-                                        <Tag key={index} className="m-1">
-                                            #{_tag}
+                                        <Tag bordered={false} color="#6287D5" key={index} className="m-1">
+                                            {_tag}
                                         </Tag>
                                     )
                                 })}
@@ -91,8 +91,8 @@ export default function page({ params }: { params: { id: string } }) {
                                 <h1 className="font-bold mb-1 ml-2">Haberin İlişkileri</h1>
                                 {source?.summary.relations.map((_tag: any, index: number) => {
                                     return (
-                                        <Tag key={index} className="m-1">
-                                            #{_tag}
+                                        <Tag bordered={false} color="#6287D5" key={index} className="m-1">
+                                            {_tag}
                                         </Tag>
                                     )
                                 })}

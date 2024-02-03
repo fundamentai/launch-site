@@ -66,8 +66,15 @@ export default function page() {
             </svg>
         ),
         getItem(
-            'Günlük Haberler',
+            'Enerji Haberleri',
             '2',
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+            </svg>
+        ),
+        getItem(
+            'Günlük Haberler',
+            '3',
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path
                     strokeLinecap="round"
@@ -123,8 +130,6 @@ export default function page() {
                             <div className="grid grid-cols-3 gap-10 my-8 ">
                                 {!loading &&
                                     data.map((prod: any) => {
-                                        console.log(config.img_url + prod.publisher.logo.data.attributes.url)
-
                                         return (
                                             <ProductCard
                                                 className="h-fit border-2 backdrop-blur-sm bg-slate-200 border-solid border-black/10 rounded-lg max-w-[275px]  "
