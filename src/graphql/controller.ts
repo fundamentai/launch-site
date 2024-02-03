@@ -5,10 +5,12 @@ import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
 
 import GET_ALL_SOURCES from '@/graphql/sources.gql'
 import GET_SOURCE from '@/graphql/source.gql'
+import GET_SUMMARY from '@/graphql/get-summary.gql'
 
 let queries = {
     GET_ALL_SOURCES,
-    GET_SOURCE
+    GET_SOURCE,
+    GET_SUMMARY
 }
 
 import ADD_SUMMARY from '@/graphql/add-summary.gql'

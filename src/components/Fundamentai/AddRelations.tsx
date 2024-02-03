@@ -1,36 +1,31 @@
+'use client'
+
 import { Button, Form, Input, Tag } from 'antd'
 import React, { useEffect, useState } from 'react'
 
-export default function AddRelations() {
-    const [data, setData] = useState<any[]>([
-        { name: 'Tag 1', id: '1' },
-        { name: 'Tag 2', id: '2' },
-        { name: 'Tag 3', id: '3' },
-        { name: 'Tag 4', id: '4' },
-        { name: 'Tag 5', id: '5' },
-        { name: 'Tag 6', id: '6' }
-    ])
+export default function AddRelations({ relations }: { relations: string[] }) {
+    const [data_, setData] = useState<any[]>(relations)
 
     function deleteTag(id: number) {
-        setData(data.filter((tag: any) => tag.id !== id))
+        setData(data_.filter((tag: any) => tag.id !== id))
     }
 
-    useEffect(() => {}, [data])
+    useEffect(() => {}, [data_])
     return (
         <div className="w-full flex justify-between border-b-2 border-solid border-black/10">
             <div className="w-[40%]">
                 <h1 className="mb-2 ml-1 font-bold">Haberin İlişkileri</h1>
-                {data.map((tag: any) => {
+                {data_.map((tag: any) => {
                     return (
                         <Tag
-                            key={tag.id}
+                            key={tag}
                             className="m-1"
                             closeIcon
                             onClose={() => {
-                                deleteTag(tag.id)
+                                deleteTag(tag)
                             }}
                         >
-                            #{tag.name}
+                            #{tag}
                         </Tag>
                     )
                 })}
@@ -39,7 +34,7 @@ export default function AddRelations() {
                 <Form
                     // name="basic"
                     onFinish={(e: any) => {
-                        setData((prevData: any[]) => [...prevData, { name: e.name, id: `${prevData.length + 10}` }])
+                        setData((prevData: any[]) => [...prevData, e.name])
                     }}
                     // onFinishFailed={onFinishFailed}
                     layout="vertical"

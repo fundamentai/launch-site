@@ -1,18 +1,13 @@
+'use client'
+
 import { Button, Form, Input, Tag } from 'antd'
 import React, { useEffect, useState } from 'react'
 
-export default function AddKeyWords() {
-    const [data, setData] = useState<any[]>([
-        { name: 'Tag 1', id: '1' },
-        { name: 'Tag 2', id: '2' },
-        { name: 'Tag 3', id: '3' },
-        { name: 'Tag 4', id: '4' },
-        { name: 'Tag 5', id: '5' },
-        { name: 'Tag 6', id: '6' }
-    ])
+export default function AddKeyWords({ keywords }: { keywords: string[] }) {
+    const [data, setData] = useState<any[]>(keywords)
 
     function deleteTag(id: number) {
-        setData(data.filter((tag: any) => tag.id !== id))
+        setData(data.filter((tag: any) => tag !== id))
     }
 
     useEffect(() => {}, [data])
@@ -23,14 +18,14 @@ export default function AddKeyWords() {
                 {data.map((tag: any) => {
                     return (
                         <Tag
-                            key={tag.id}
+                            key={tag}
                             className="m-1"
                             closeIcon
                             onClose={() => {
-                                deleteTag(tag.id)
+                                deleteTag(tag)
                             }}
                         >
-                            #{tag.name}
+                            #{tag}
                         </Tag>
                     )
                 })}
@@ -39,7 +34,7 @@ export default function AddKeyWords() {
                 <Form
                     // name="basic"
                     onFinish={(e: any) => {
-                        setData((prevData: any[]) => [...prevData, { name: e.name, id: `${prevData.length + 10}` }])
+                        setData((prevData: any[]) => [...prevData, e.name])
                     }}
                     // onFinishFailed={onFinishFailed}
                     layout="vertical"

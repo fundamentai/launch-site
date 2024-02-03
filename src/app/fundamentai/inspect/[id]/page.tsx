@@ -14,15 +14,18 @@ import { Button } from 'antd'
 export default function page({ params }: { params: { id: string } }) {
     let { data, loading, error } = Query('GET_SOURCE', {
         id: params.id
-    })
+    }) as any
 
     let source = !loading
         ? {
               title: data.source.data.attributes.title,
               description: data.source.data.attributes.content,
-              link: data.source.data.attributes.source
+              link: data.source.data.attributes.source,
+              summary: data.source.data.attributes.summary
           }
         : undefined
+
+    console.log(source)
 
     return (
         <div className="text-black flex flex-col items-center my-10">
@@ -34,23 +37,18 @@ export default function page({ params }: { params: { id: string } }) {
                         {source?.link.length > 90 ? source?.link.slice(0, 90) + '...' : source?.link} <ExportOutlined className="h-[14px]" />
                     </h1>
                 </a>
-                <div className="w-full border-2 border-dashed border-black/10 rounded-xl py-4">
-                    <div className="flex items-center justify-start px-2 pt-2 pb-1 pl-4 gap-x-3">
-                        <h1 className="font-bold">FundamentAI diyor ki</h1>
-                        <Image className="w-6 h-6" alt="" src={bard} />
+                {!loading && (
+                    <div className="w-full border-2 border-dashed border-black/10 rounded-xl py-4">
+                        <div className="flex items-center justify-start px-2 pt-2 pb-1 pl-4 gap-x-3">
+                            <h1 className="font-bold">Özetlenmiş Metin</h1>
+                            <Image className="w-6 h-6" alt="" src={bard} />
+                        </div>
+                        <div className="w-full pb-2 pt-1 px-4 text-justify">{source?.summary.summary}</div>
                     </div>
-                    <div className="w-full pb-2 pt-1 px-4 text-justify">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis magni delectus eveniet pariatur aliquid aperiam minus
-                        inventore, minima quos, suscipit beatae. Perferendis nam totam quidem molestias eos voluptatem. Amet, rerum. Lorem ipsum dolor
-                        sit, amet consectetur adipisicing elit. Veritatis magni delectus eveniet pariatur aliquid aperiam minus inventore, minima
-                        quos, suscipit beatae. Perferendis nam totam quidem molestias eos voluptatem. Amet, rerum. Lorem ipsum dolor sit, amet
-                        consectetur adipisicing elit. Veritatis magni delectus eveniet pariatur aliquid aperiam minus inventore, minima quos, suscipit
-                        beatae. Perferendis nam totam quidem molestias eos voluptatem. Amet, rerum.
-                    </div>
-                </div>
+                )}
                 <div className="my-4 flex flex-col gap-y-4 w-full">
-                    <AddRelations />
-                    <AddKeyWords />
+                    {!loading && <AddRelations relations={source?.summary.relations} />}
+                    {!loading && <AddKeyWords keywords={source?.summary.keywords} />}
                 </div>
                 <div className="flex   items-center justify-center rounded-lg my-10">
                     <Link href={`/fundamentai/inspect/${params.id}/editor`}>
