@@ -13,7 +13,7 @@ export default function AddRelations({ relations }: { relations: string[] }) {
     useEffect(() => {}, [data_])
     return (
         <div className="w-full flex justify-between border-b-2 border-solid border-black/10">
-            <div className="w-[40%]">
+            <div className="w-[60%]">
                 <h1 className="mb-2 ml-1 font-bold">Haberin İlişkileri</h1>
                 {data_.map((tag: any) => {
                     return (

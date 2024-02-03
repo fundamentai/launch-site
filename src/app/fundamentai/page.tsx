@@ -22,11 +22,11 @@ export default function page() {
     }
 
     return (
-        <div className="w-full  flex flex-col items-center justify-start">
-            <div className="grid grid-cols-3 gap-10 my-8">
+        <div className="w-full  flex flex-col items-center justify-start min-h-[70vh]">
+            <div className="grid grid-cols-3 gap-10 my-8 ">
                 {!loading &&
                     data.map((prod: any) => {
-                        return <ProductCard className="border-2 border-solid border-black/10 rounded-xl max-w-[250px]  " data={prod} />
+                        return <ProductCard className="h-fit border-2 border-solid border-black/10 rounded-xl max-w-[250px]  " data={prod} />
                     })}
             </div>
         </div>

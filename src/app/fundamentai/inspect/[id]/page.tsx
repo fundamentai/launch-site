@@ -37,7 +37,7 @@ export default function page({ params }: { params: { id: string } }) {
                         {source?.link.length > 90 ? source?.link.slice(0, 90) + '...' : source?.link} <ExportOutlined className="h-[14px]" />
                     </h1>
                 </a>
-                {!loading && (
+                {!loading && source?.summary && (
                     <div className="w-full border-2 border-dashed border-black/10 rounded-xl py-4">
                         <div className="flex items-center justify-start px-2 pt-2 pb-1 pl-4 gap-x-3">
                             <h1 className="font-bold">Özetlenmiş Metin</h1>
@@ -47,8 +47,8 @@ export default function page({ params }: { params: { id: string } }) {
                     </div>
                 )}
                 <div className="my-4 flex flex-col gap-y-4 w-full">
-                    {!loading && <AddRelations relations={source?.summary.relations} />}
-                    {!loading && <AddKeyWords keywords={source?.summary.keywords} />}
+                    {!loading && source?.summary && <AddRelations relations={source?.summary.relations} />}
+                    {!loading && source?.summary && <AddKeyWords keywords={source?.summary.keywords} />}
                 </div>
                 <div className="flex   items-center justify-center rounded-lg my-10">
                     <Link href={`/fundamentai/inspect/${params.id}/editor`}>

@@ -13,7 +13,7 @@ export default function AddKeyWords({ keywords }: { keywords: string[] }) {
     useEffect(() => {}, [data])
     return (
         <div className="w-full flex justify-between">
-            <div className="w-[40%]">
+            <div className="w-[60%]">
                 <h1 className="mb-2 ml-1 font-bold">Haberin Anahtar Kelimeleri</h1>
                 {data.map((tag: any) => {
                     return (
