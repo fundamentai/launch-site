@@ -25,7 +25,6 @@ export default function page({ params }: { params: { id: string } }) {
           }
         : undefined
 
-    console.log(source)
 
     return (
         <div className="text-black flex flex-col items-center my-10">
