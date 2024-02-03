@@ -5,13 +5,13 @@ import React from 'react'
 
 import { Query } from '@/graphql/controller'
 import { Button, Checkbox, ConfigProvider, DatePicker, Input, Layout, Menu, Select } from 'antd'
-import Header from '@/components/Header/Header'
 import Sider from 'antd/es/layout/Sider'
-import { Content } from 'next/font/google'
 import { SearchOutlined } from '@ant-design/icons'
-import Search from 'antd/es/input/Search'
+import trTR from 'antd/locale/tr_TR'
+import dayjs from 'dayjs'
 
 export default function page() {
+    dayjs.locale('tr-TR')
     let { data, loading, error } = Query('GET_ALL_SOURCES')
 
     if (!loading) {
@@ -30,8 +30,7 @@ export default function page() {
 
     const options = [
         { label: 'Apple', value: 'Apple' },
-        { label: 'Pear', value: 'Pear' },
-        { label: 'Orange', value: 'Orange' }
+        { label: 'Pear', value: 'Pear' }
     ]
 
     const _options = []
@@ -53,15 +52,12 @@ export default function page() {
         } as any
     }
 
-    const items = [
-        getItem('Option 1', '1', <SearchOutlined />),
-        getItem('Option 2', '2', <SearchOutlined />),
-        getItem('Option 3', '3', <SearchOutlined />)
-    ]
+    const items = [getItem('Finans Haberleri', '1', <SearchOutlined />), getItem('Günlük Haberler', '2', <SearchOutlined />)]
 
     return (
         <div className="w-full  flex flex-col items-center justify-start min-h-[70vh]">
             <ConfigProvider
+                locale={trTR}
                 theme={{
                     components: {
                         Layout: {
@@ -81,10 +77,13 @@ export default function page() {
                         <Sider width={'25%'}>
                             <div className="w-full h-full  py-5 flex flex-col gap-y-3">
                                 <div className="flex flex-col items-center w-full px-4 gap-y-4">
-                                    <Input className="rounded-lg" />
-                                    <Search className="rounded-2xl" size="large" />
+                                    <div className="flex justify-center gap-x-2 w-full">
+                                        <Input placeholder="Ara..." className="rounded-lg border-[#d9d9d9] w-full" />
+                                        <Button size="large" className="h-full w-full " icon={<SearchOutlined />} />
+                                    </div>
                                     <DatePicker size="large" className="w-full" />
                                 </div>
+                                <h1 className="font-bold text-[18px] pt-4 px-4">Kategoriler</h1>
                                 <Menu
                                     className="border-none"
                                     defaultSelectedKeys={['1']}
