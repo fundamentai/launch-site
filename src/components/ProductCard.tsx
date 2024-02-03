@@ -230,7 +230,9 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0] 
     return (
         <>
             <Link href={`/fundamentai/inspect/${id}`}>
-                <div className={`nc-ProductCard relative flex flex-col bg-transparent h-full cursor-pointer ${className}`}>
+                <div
+                    className={`nc-ProductCard relative flex duration-200 hover:scale-[1.01] flex-col bg-transparent h-full cursor-pointer ${className}`}
+                >
                     {/* İmage */}
                     <div className="relative flex-shrink-0 bg-slate-50 dark:bg-slate-300 rounded-t-lg overflow-hidden z-1 group">
                         <NcImage
@@ -260,6 +262,7 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0] 
                             {/* Okuma süresi kısmı */}
                             <Prices date="11/09/2023" className="text-[14px] text-slate-500" />
                             <div className="flex items-center mb-0.5">
+                                <span className="text-sm ms-1 text-slate-500 dark:text-slate-400">{readingTime(description)}dk</span>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="#fff"
@@ -270,7 +273,6 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0] 
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>
-                                <span className="text-sm ms-1 text-slate-500 dark:text-slate-400">{readingTime(description)} dakika</span>
                             </div>
                         </div>
                     </div>
