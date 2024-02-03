@@ -6,12 +6,26 @@ query GET_ALL_SOURCES {
                 title
                 content
                 createdAt
+                thumbnail {
+                    data {
+                        attributes {
+                            url
+                        }
+                    }
+                }
 
                 publisher {
                     data {
                         attributes {
                             name
                             site
+                            logo {
+                                data {
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
                         }
                     }
                 }

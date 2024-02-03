@@ -10,6 +10,8 @@ import { SearchOutlined } from '@ant-design/icons'
 import trTR from 'antd/locale/tr_TR'
 import dayjs from 'dayjs'
 
+import config from '@/config/config'
+
 export default function page() {
     dayjs.locale('tr-TR')
     let { data, loading, error } = Query('GET_ALL_SOURCES')
@@ -19,9 +21,10 @@ export default function page() {
             return {
                 id: element.id,
                 name: element.attributes.title,
-                publisher: !element.attributes.publisher ? element.attributes.publisher.data.attributes : null,
+                publisher: element.attributes.publisher.data.attributes,
                 description: element.attributes.content,
-                createdAt: element.attributes.createdAt
+                createdAt: element.attributes.createdAt,
+                thumbnail: element.attributes.thumbnail.data.attributes.url
             }
         })
     }
@@ -32,8 +35,6 @@ export default function page() {
         { label: 'Apple', value: 'Apple' },
         { label: 'Pear', value: 'Pear' }
     ]
-
-    const _options = []
 
     for (let i = 10; i < 36; i++) {
         options.push({
@@ -99,10 +100,16 @@ export default function page() {
                             <div className="grid grid-cols-3 gap-10 my-8 ">
                                 {!loading &&
                                     data.map((prod: any) => {
+                                        console.log(config.img_url + prod.publisher.logo.data.attributes.url)
+
                                         return (
                                             <ProductCard
                                                 className="h-fit border-2 backdrop-blur-sm bg-slate-200 border-solid border-black/10 rounded-lg max-w-[250px]  "
-                                                data={prod}
+                                                data={{
+                                                    // image: config.img_url + prod.publisher.logo.data.attributes.url,
+                                                    image: config.img_url + prod.thumbnail,
+                                                    ...prod
+                                                }}
                                             />
                                         )
                                     })}

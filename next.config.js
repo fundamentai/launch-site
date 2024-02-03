@@ -1,3 +1,7 @@
+const { config } = require('dotenv')
+
+config()
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     experimental: {
@@ -27,9 +31,17 @@ const nextConfig = {
                 hostname: 'images.unsplash.com',
                 port: '',
                 pathname: '/**'
+            },
+            {
+                protocol: 'http',
+                hostname: '127.0.0.1',
+                port: '1337',
+                pathname: '/**'
             }
         ]
     }
 }
+
+console.log(process.env.PORT)
 
 module.exports = nextConfig
