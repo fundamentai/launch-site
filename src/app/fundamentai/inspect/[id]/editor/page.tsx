@@ -34,7 +34,7 @@ export default function page({ params }: { params: { id: string } }) {
                 }
             }}
         >
-            <Layout className="overflow-y-hidden h-[70vh]">
+            <Layout className="overflow-y-hidden h-[88vh]">
                 <Layout className="bg-white">
                     <Content className=" py-6  p-10  overflow-y-auto">
                         {/* CK Editor */}
