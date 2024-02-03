@@ -78,10 +78,10 @@ export default function page() {
                             <div className="w-full h-full  py-5 flex flex-col gap-y-3">
                                 <div className="flex flex-col items-center w-full px-4 gap-y-4">
                                     <div className="flex justify-center gap-x-2 w-full">
-                                        <Input placeholder="Ara..." className="rounded-lg border-[#d9d9d9] w-full" />
+                                        <Input placeholder="Haber ara" className="rounded-lg border-[#d9d9d9] w-full" />
                                         <Button size="large" className="h-full w-full " icon={<SearchOutlined />} />
                                     </div>
-                                    <DatePicker size="large" className="w-full" />
+                                    <DatePicker placeholder="Tarihe göre ara" size="large" className="w-full" />
                                 </div>
                                 <h1 className="font-bold text-[18px] pt-4 px-4">Kategoriler</h1>
                                 <Menu
@@ -101,7 +101,7 @@ export default function page() {
                                     data.map((prod: any) => {
                                         return (
                                             <ProductCard
-                                                className="h-fit border-2 backdrop-blur-sm bg-slate-200 border-solid border-black/10 rounded-lg max-w-[250px]  "
+                                                className="h-fit border-2 backdrop-blur-sm bg-slate-200 border-solid border-black/10 rounded-lg max-w-[275px]  "
                                                 data={prod}
                                             />
                                         )
