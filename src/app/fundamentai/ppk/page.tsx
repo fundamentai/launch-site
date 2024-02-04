@@ -11,10 +11,6 @@ export default function page() {
 
     let { data, loading, error } = Query('GET_LAST_2_TCMB')
 
-    if (!loading) {
-        console.log(data.getFixedTcmb)
-    }
-
     let [oldText, newText] = !loading ? data.getFixedTcmb.map((element: any) => element.content) : ['', '']
 
     const dmp = new DiffMatchPatch()
