@@ -8,10 +8,7 @@ export const { getClient } = registerApolloClient(() => {
     return new NextSSRApolloClient({
         cache: new NextSSRInMemoryCache(),
         link: new HttpLink({
-            uri: config.gql,
-            headers: {
-                Authorization: `Bearer ${config.bearer}`
-            }
+            uri: config.gql
         })
     })
 })
