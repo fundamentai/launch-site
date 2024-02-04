@@ -6,6 +6,14 @@ query GET_ALL_SOURCES {
                 title
                 content
                 createdAt
+                categories {
+                    data {
+                        attributes {
+                            slug
+                        }
+                    }
+                }
+
                 thumbnail {
                     data {
                         attributes {

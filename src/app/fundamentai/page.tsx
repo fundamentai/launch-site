@@ -24,12 +24,11 @@ export default function page() {
                 publisher: element.attributes.publisher.data.attributes,
                 description: element.attributes.content,
                 createdAt: element.attributes.createdAt,
-                thumbnail: element.attributes.thumbnail.data.attributes.url
+                thumbnail: element.attributes.thumbnail.data.attributes.url,
+                category: element.attributes.categories.data[0].attributes.slug
             }
         })
     }
-
-    console.log(data)
 
     const options = [
         { label: 'Apple', value: 'Apple' },
@@ -134,8 +133,10 @@ export default function page() {
                                             <ProductCard
                                                 className="h-fit border-2 backdrop-blur-sm bg-slate-200 border-solid border-black/10 rounded-lg max-w-[275px]  "
                                                 data={{
-                                                    // image: config.img_url + prod.publisher.logo.data.attributes.url,
+                                                    icon: config.img_url + prod.publisher.logo.data.attributes.url,
                                                     image: config.img_url + prod.thumbnail,
+                                                    category: prod.category,
+                                                    publisherName: prod.publisher.name,
                                                     ...prod
                                                 }}
                                             />

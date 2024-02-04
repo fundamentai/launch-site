@@ -16,14 +16,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import NcImage from '@/shared/NcImage/NcImage'
 
+interface Card extends Product {
+    category: string
+    icon: string
+    publisherName: string
+}
+
 export interface ProductCardProps {
     className?: string
-    data?: Product
+    data?: Card
     isLiked?: boolean
 }
 
-const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0] }) => {
-    const { name, price, description, sizes, variants, variantType, status, image, rating, id, numberOfReviews } = data
+const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0] as Card }) => {
+    const { name, price, description, sizes, variants, variantType, status, image, rating, id, numberOfReviews, publisherName, icon, category } =
+        data as Card
 
     const [variantActive, setVariantActive] = useState(0)
     const [showModalQuickView, setShowModalQuickView] = useState(false)
@@ -245,14 +252,14 @@ const ProductCard: FC<ProductCardProps> = ({ className = '', data = PRODUCTS[0] 
                         />
 
                         {/* Haber title'ı */}
-                        <LikeButton title={'Deneme metin'} className="absolute bottom-2 end-0 z-10" />
+                        <LikeButton title={category} className="absolute bottom-2 end-0 z-10" />
                     </div>
 
                     <div className="space-y-4 px-2.5 pt-2 pb-2.5">
                         <div>
                             {/* Kaynak ajans artı ajans logosu */}
                             <div className="flex items-center justify-start gap-x-2 text-[12px] text-slate-500">
-                                <div>İcon</div> <label className="">Anadolu Ajansı</label>
+                                <div>{<NcImage src={icon} width={10} height={10} />}</div> <label className="">{publisherName}</label>
                             </div>
                             <h2 className="nc-ProductCard__title text-lg font-semibold transition-colors line-clamp-2">{name.toUpperCase()}</h2>
                             <p className={`text-sm text-slate-500 dark:text-slate-700 mt-1 line-clamp-4`}>{description}</p>
